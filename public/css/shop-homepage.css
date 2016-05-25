@@ -1,0 +1,130 @@
+/*!
+ * Start Bootstrap - Shop Homepage HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.slide-image {
+    width: 100%;
+}
+
+.carousel-holder {
+    margin-bottom: 30px;
+}
+
+.carousel-control,
+.item {
+    border-radius: 4px;
+}
+
+.caption {
+    height: 140px;
+    overflow: hidden;
+}
+
+.caption h4 {
+    white-space: nowrap;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+.ratings {
+    padding-right: 10px;
+    padding-left: 10px;
+    color: #d17581;
+}
+.addcart{
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+}
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+    color: #333;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+/*
+* Global Variables
+*/
+.fontsize-20{
+    font-size: 20px;
+}
+
+
+/*
+* Navigation override
+*/
+.navbar-inverse{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#606c88+0,3f4c6b+100;Grey+3D+%232 */
+    background: #606c88; /* Old browsers */
+    background: -moz-linear-gradient(top, #606c88 0%, #3f4c6b 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #606c88 0%,#3f4c6b 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #606c88 0%,#3f4c6b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606c88', endColorstr='#3f4c6b',GradientType=0 ); /* IE6-9 */
+}
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a{
+    color:#fff;
+}
+/*
+* Cart.navigation
+*/
+.cart-navigation{
+    width:360px;
+    font-size:12px;
+ }
+ .cart-navigation-header{
+     font-weight: bold;
+     margin-bottom:3px;
+ }
+ /*
+ * Navbar togle
+ */
+.toggleArrow {
+  position: absolute;
+  margin-top: -33px;
+  margin-left: 77%;
+  color:#337ab7;
+  width: 17px;
+  font-size: 17px;
+  padding-left: 3px;
+  padding-bottom: 3px;
+ }
+
+ /*
+  * Background color change for Mobile Navigation
+  */
+ @media (max-width: 767px){
+.navbar-nav .open .dropdown-menu {
+    background-color:#ccc !important;
+}
+ }
+
+ /*
+ * Currency drop-down scrollable
+ */
+ .scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
+
+/*
+* language Switcher
+*/
+.languageSwitch{
+  margin-top:7px;
+}
