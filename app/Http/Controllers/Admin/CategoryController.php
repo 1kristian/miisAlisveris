@@ -10,9 +10,27 @@ use App\Http\Requests\Admin\CategoryStoreRequest;
 use App\Http\Requests\Admin\CategoryUpdateRequest;
 
 use App\Category;
+use Auth;
+use App\User;
+use Bican\Roles\Models\Permission;
+use Bican\Roles\Models\Role;
 
 class CategoryController extends Controller
 {
+
+  /**
+   * Check user role
+   * @param int Auth::id();
+   * @return \Illuminate\Http\Response
+   */
+    public function __construct()
+    {
+      $user = User::find(Auth::id());
+      if (!$user->is('test')) {
+        return redirect('admin/home');
+      }
+    }
+
     /**
      * Display a listing of the resource.
      *

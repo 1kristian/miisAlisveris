@@ -10,6 +10,20 @@ use App\Http\Controllers\Controller;
 
 class CurrencyController extends Controller
 {
+
+  /**
+   * Check user role
+   * @param int Auth::id();
+   * @return \Illuminate\Http\Response
+   */
+    public function __construct()
+    {
+      $user = User::find(Auth::id());
+      if (!$user->is('admin')) {
+        return redirect('admin/home');
+      }
+    }
+    
     /**
      * Display a listing of the resource.
      *
