@@ -27,8 +27,6 @@ Screenvideo
 ![enter image description here](http://i.giphy.com/l0K4eH575eBiW7xkY.gif)
 
 ----------
-
-
 > **Installation:**
 
 > - git clone https://github.com/korayzorluoglu/miisAlisveris.git
@@ -39,6 +37,9 @@ Screenvideo
 > - php artisan db:seed
 > - php artisan currency:update
 
+**Development Notes:**
+One file mySQL Editor(phpMyAdmin alternative)
+> - http://yourUrl.com/adminer.php 
 
  **Cron Jobs:**
 for  Currencies update from Finance Yahoo;
