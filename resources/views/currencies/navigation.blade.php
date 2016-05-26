@@ -1,6 +1,4 @@
-@if (count($currencies) === 0)
-<!-- Only one currency -->
-@else
+@if(count($currencies) > 0)
 <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
              <!-- Icon X Product(s) | Total XX TRY  -->

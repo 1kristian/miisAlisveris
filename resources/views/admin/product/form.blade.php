@@ -68,8 +68,7 @@
            <input type="text" name="price" value="{{ old('slug',  isset($product->price) ? $product->price : null) }}" class="form-control">
        </div>
 
-      </div>
-
+ 
 
 
 <button type="submit" class="btn btn-success">Submit</button>

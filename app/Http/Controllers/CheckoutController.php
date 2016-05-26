@@ -13,15 +13,13 @@ use App\UserAddress;
 class CheckoutController extends Controller {
 
     public function __construct() {
-
-        if (CartProvider::instance()->count() === 0) {
-            return redirect('/');
+        if (CartProvider::instance()->count() == 0) {
+            return redirect('/')->send();
         }
         $categories = \App\Category::all()->toHierarchy();
         $currencies = \App\Currency::all();
         view()->share('categories', $categories);
         view()->share('currencies', $currencies);
-
     }
 
     public function index() {

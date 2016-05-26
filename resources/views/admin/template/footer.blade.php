@@ -1,16 +1,16 @@
 
-  <!-- Main Footer -->
-  <footer class="main-footer">
+<!-- Main Footer -->
+<footer class="main-footer">
     <!-- To the right -->
     <div class="pull-right hidden-xs">
-      {{ trans('admin/template/footer.mujde') }}
+        {{ trans('admin/template/footer.mujde') }}
     </div>
     <!-- Default to the left -->
     <!-- !! for HTML render-->
-      {!! trans('admin/template/footer.copyright') !!}
-  </footer>
+    {!! trans('admin/template/footer.copyright') !!}
+</footer>
 
- </div>
+</div>
 <!-- ./wrapper -->
 
 <!-- REQUIRED JS SCRIPTS -->
@@ -39,24 +39,24 @@
 <!-- AdminLTE App -->
 <script src="{{ url('adminassets')}}/dist/js/app.min.js"></script>
 <script>
-  $(function () {
+$(function () {
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
     CKEDITOR.replace('editor', {
-      filebrowserBrowseUrl : '/elfinder/ckeditor',
+        filebrowserBrowseUrl: '/elfinder/ckeditor',
     });
     //Replace example2 with DataTable
-     $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": true,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
+    $('#example2').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": true,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false,
     });
     // Bootstrap multiselect
     $('#multiSelect').multiselect({
-        checkboxName: function(option) {
+        checkboxName: function (option) {
             return 'multiSelect[]';
         }
 
@@ -64,7 +64,7 @@
 
 
 
-  });
+});
 </script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the

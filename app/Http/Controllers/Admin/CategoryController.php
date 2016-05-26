@@ -11,9 +11,7 @@ use App\Http\Requests\Admin\CategoryUpdateRequest;
 
 use App\Category;
 use Auth;
-use App\User;
-use Bican\Roles\Models\Permission;
-use Bican\Roles\Models\Role;
+use Flash;
 
 class CategoryController extends Controller
 {
@@ -25,10 +23,7 @@ class CategoryController extends Controller
    */
     public function __construct()
     {
-      $user = User::find(Auth::id());
-      if (!$user->is('test')) {
-        return redirect('admin/home');
-      }
+
     }
 
     /**
@@ -78,10 +73,10 @@ class CategoryController extends Controller
       }
 
       if($category){
-        \Session::flash('admin_flash_message_success','Category created.');
+        Flash::success('Category created.');
         return redirect()->route('admin.category.create');
       }else{
-        \Session::flash('admin_flash_message_error','Category not created.');
+        Flash::error('Category not created.');
         return redirect()->route('admin.category.create');
       }
 
@@ -106,6 +101,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
+
       $categories = Category::all()->toHierarchy();
       $category = Category::find($id);
       return view('admin/category.edit')
@@ -128,19 +124,18 @@ class CategoryController extends Controller
       $category->slug = $request->slug;
       $category->content = $request->content;
       $category->image = $request->image;
-      $category->save();
-
+ 
     if($request->parent_id){
          $category->makeChildOf($request->parent_id);
     }
-
-    if($category){
-      \Session::flash('admin_flash_message_success','Category updated.');
+    if($category->save()){
+      Flash::success('Category updated.');
       return redirect()->route('admin.category.edit', ['id' => $id]);
     }else{
-       \Session::flash('admin_flash_message_error','Category not updated.');
+       Flash::error('Category not updated.');
         return redirect()->route('admin.category.edit', ['id' => $id]);
      }
+
 
     }
 
@@ -154,10 +149,10 @@ class CategoryController extends Controller
     {
         $category = Category::destroy($id);
         if($category){
-          \Session::flash('admin_flash_message_success','Category deleted.');
+          Flash::success('Category deleted.');
           return redirect()->route('admin.category.index');
         }else{
-          \Session::flash('admin_flash_message_error','Category not deleted.');
+          Flash::error('Category not deleted.');
           return redirect()->route('admin.category.index');
         }
     }

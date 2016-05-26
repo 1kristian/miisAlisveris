@@ -10,12 +10,10 @@
                 <li>
                     <a>{{ trans('auth/navigation.welcome_text') }} {{ Auth::user()->name }}</a>
                 </li>
-                @role('admin')
-                <li>
+                 <li>
                     <a href="{{ url('admin/home') }}">{{ trans('auth/navigation.admin') }}</a>
                 </li>
-                @endrole
-                <li>
+                 <li>
                     <a href="{{ url('profile') }}">{{ trans('auth/navigation.profile') }}</a>
                 </li>
                 <li>

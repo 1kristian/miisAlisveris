@@ -6,9 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\User;
 use Auth;
-
 class HomeController extends Controller
 {
   /**
@@ -18,11 +16,11 @@ class HomeController extends Controller
    */
     public function __construct()
     {
-      $user = User::find(Auth::id());
-       if ($user->is('admin') == false) {
-         return redirect('home/dashboard');
-       }
-    }
+      $user = \App\User::find(Auth::id());
+       if ($user->is('admin')) { // you can pass an id or slug
+        return redirect('login');
+      }
+     }
 
     public function index(){
       return view('admin/home.index');

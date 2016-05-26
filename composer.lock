@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c41cda295bbe0da28d855ae6d8c67d39",
-    "content-hash": "12a458a627e35e3b679d8309e540fa75",
+    "hash": "a8741309ed153fc7b552d722e297fb3c",
+    "content-hash": "4efeec4bc25af314a686a8c5b241ff37",
     "packages": [
         {
             "name": "barryvdh/elfinder-flysystem-driver",
@@ -734,17 +734,60 @@
             "time": "2015-12-05 17:17:57"
         },
         {
-            "name": "laravel/framework",
-            "version": "v5.2.32",
+            "name": "laracasts/flash",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/laravel/framework.git",
-                "reference": "f688217113f70b01d0e127da9035195415812bef"
+                "url": "https://github.com/laracasts/flash.git",
+                "reference": "4df7200127a71511bdf116bc8b7a2586612c7a35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/f688217113f70b01d0e127da9035195415812bef",
-                "reference": "f688217113f70b01d0e127da9035195415812bef",
+                "url": "https://api.github.com/repos/laracasts/flash/zipball/4df7200127a71511bdf116bc8b7a2586612c7a35",
+                "reference": "4df7200127a71511bdf116bc8b7a2586612c7a35",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Laracasts\\Flash": "src/"
+                },
+                "files": [
+                    "src/Laracasts/Flash/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeffrey Way",
+                    "email": "jeffrey@laracasts.com"
+                }
+            ],
+            "description": "Easy flash notifications",
+            "time": "2016-03-14 15:55:34"
+        },
+        {
+            "name": "laravel/framework",
+            "version": "v5.2.33",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "4120808d2e841ba5a94c5e0443e9696ae4fa9bfe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/4120808d2e841ba5a94c5e0443e9696ae4fa9bfe",
+                "reference": "4120808d2e841ba5a94c5e0443e9696ae4fa9bfe",
                 "shasum": ""
             },
             "require": {
@@ -860,7 +903,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-05-17 13:24:40"
+            "time": "2016-05-25 18:35:42"
         },
         {
             "name": "laravelcollective/html",

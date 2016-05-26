@@ -13,10 +13,10 @@ class CurrencyController extends Controller {
         $currency_info = \App\Currency::find($currencyID);
         if ($currency_info) {
             Currency::setCurrency($currency_info->code);
-            \Session::flash('flash_message_success', 'Currency updated.');
+            \Flash::success('Currency updated.');
             return redirect()->back();
         } else {
-            \Session::flash('flash_message_error', 'Currency not updated.');
+            \Flash::error('Currency not updated.');
             return redirect()->back();
         }
     }

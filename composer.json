@@ -11,9 +11,10 @@
         "syscover/shoppingcart": "dev-master",
         "davejamesmiller/laravel-breadcrumbs": "^3.0",
         "laravelcollective/html": "5.2.*",
-        "bican/roles": "2.1.*",
         "barryvdh/laravel-elfinder": "^0.3.7",
-        "baum/baum": "~1.1"
+        "baum/baum": "~1.1",
+        "bican/roles": "2.1.*",
+        "laracasts/flash": "^2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

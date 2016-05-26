@@ -13,7 +13,7 @@ class ProfileController extends Controller {
 
     public function __construct() {
         if (!Auth::check()) {
-            return redirect('login');
+            return redirect('login')->send();
         }
         $categories = \App\Category::all()->toHierarchy();
         $currencies = \App\Currency::all();
@@ -54,10 +54,10 @@ class ProfileController extends Controller {
 
 
         if ($useraddress->save()) {
-            \Session::flash('flash_message_success', 'Address created.');
+            \Flash::success('Address created.');
             return redirect('profile');
         } else {
-            \Session::flash('flash_message_error', 'Address not created.');
+            \Flash::error('Address not created.');
             return redirect('profile');
         }
     }
@@ -65,7 +65,7 @@ class ProfileController extends Controller {
     public function showAddress($id) {
         $useraddress = UserAddress::where('user_address_id', $id)->first();
         if (!$useraddress) {
-            \Session::flash('flash_message_error', 'You have not this Address.');
+            \Flash::error('You have not this address.');
             return redirect()->back();
         }
         return view('auth.profile.showaddress', [
@@ -89,10 +89,10 @@ class ProfileController extends Controller {
         ]);
 
         if ($useraddress) {
-            \Session::flash('flash_message_success', 'Address updated.');
+            \Flash::success('Address updated.');
             return redirect()->back();
         } else {
-            \Session::flash('flash_message_error', 'Address not updated.');
+            \Flash::error('Address not updated.');
             return redirect()->back();
         }
     }
@@ -104,10 +104,10 @@ class ProfileController extends Controller {
                                 ->delete();
 
         if ($deletedAdress) {
-            \Session::flash('flash_message_success', 'Address deleted.');
+            \Flash::success('Address deleted.');
             return redirect()->back();
         } else {
-            \Session::flash('flash_message_error', 'Address not deleted.');
+            \Flash::error('Address not deleted.');
             return redirect()->back();
         }
     }

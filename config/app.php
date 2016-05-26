@@ -147,22 +147,25 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Syscover\Shoppingcart\ShoppingcartServiceProvider::class,
-        Casinelli\Currency\CurrencyServiceProvider::class,
-        Collective\Html\HtmlServiceProvider::class,
-        DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
-        Collective\Html\HtmlServiceProvider::class,
-        Bican\Roles\RolesServiceProvider::class,
-        Barryvdh\Elfinder\ElfinderServiceProvider::class,
-        Baum\Providers\BaumServiceProvider::class,
-         /*
+          /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        /**
+         * Third Party Service Providers...
+         */
+        Bican\Roles\RolesServiceProvider::class,
+        Syscover\Shoppingcart\ShoppingcartServiceProvider::class,
+        Casinelli\Currency\CurrencyServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
+        DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
+        Barryvdh\Elfinder\ElfinderServiceProvider::class,
+        Baum\Providers\BaumServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class,
     ],
 
     /*
@@ -208,14 +211,17 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        /**
+         * Third Party Aliases
+         */
         'CartProvider' => Syscover\Shoppingcart\Facades\CartProvider::class,
         'Currency' => Casinelli\Currency\Facades\Currency::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Input' => Illuminate\Support\Facades\Input::class,
         'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
-        'Form' => Collective\Html\FormFacade::class,
-        'Html' => Collective\Html\HtmlFacade::class,
+        'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+        'Flash' => Laracasts\Flash\Flash::class
      ],
 
 ];

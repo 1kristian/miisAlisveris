@@ -20,7 +20,7 @@ class ProductController extends Controller {
         $products = \App\Product::all();
         $product = \App\Product::where('slug', $slug)->first();
         if (!$product) {
-            \Session::flash('flash_message_error', 'We have no products with this name.');
+            \Flash::error('We have no products with this name.');
             return redirect()->back();
         }
         return view('product.index', [

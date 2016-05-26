@@ -16,12 +16,10 @@ class HomeController extends Controller {
         view()->share('currencies', $currencies);
     }
 
-
     public function index() {
+        $products = \App\Product::all();
 
-      $products = \App\Product::all();
-
-      return view('home.index', [
+        return view('home.index', [
             'products' => $products,
             'page_title' => 'Homepage',
         ]);

@@ -57,7 +57,7 @@ return [
 
     'pretend' => [
 
-        'enabled' => true,
+        'enabled' => false,
 
         'options' => [
             'is' => true,

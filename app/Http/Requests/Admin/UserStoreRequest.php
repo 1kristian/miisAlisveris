@@ -13,7 +13,7 @@ class UserStoreRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,8 @@ class UserStoreRequest extends Request
     public function rules()
     {
         return [
-            //
+            'email' => 'required',
+            'name' => 'required'
         ];
     }
 }

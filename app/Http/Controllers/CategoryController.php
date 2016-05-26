@@ -19,7 +19,7 @@ class CategoryController extends Controller {
 
         $category = \App\Category::where('slug', $slug)->first();
         if (!$category) {
-            \Session::flash('flash_message_error', 'We have no category with this name.');
+            \Flash::error('We have no category with this name.');
             return redirect()->back();
         }
         $category_products_ids = \App\ProductCategory::where('category_id', $category->id)->lists('product_id');

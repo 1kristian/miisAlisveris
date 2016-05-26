@@ -18,12 +18,9 @@ class CurrencyController extends Controller
    */
     public function __construct()
     {
-      $user = User::find(Auth::id());
-      if (!$user->is('admin')) {
-        return redirect('admin/home');
-      }
+
     }
-    
+
     /**
      * Display a listing of the resource.
      *
