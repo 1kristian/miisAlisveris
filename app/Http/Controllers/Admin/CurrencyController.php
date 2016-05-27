@@ -11,16 +11,6 @@ use App\Http\Controllers\Controller;
 class CurrencyController extends Controller
 {
 
-  /**
-   * Check user role
-   * @param int Auth::id();
-   * @return \Illuminate\Http\Response
-   */
-    public function __construct()
-    {
-
-    }
-
     /**
      * Display a listing of the resource.
      *

@@ -56,7 +56,7 @@ Route::post('changelocale', ['as' => 'changelocale', 'uses' => 'LanguageControll
  Route::get('admin', function () {
    return redirect('admin/home');
 });
- Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admin'], function()
+ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['admin', 'role:admin']], function()
 {
     // Controllers Within The "App\Http\Controllers\Admin" Namespace and Prefix
     Route::get('home', 'HomeController@index');
@@ -67,7 +67,7 @@ Route::post('changelocale', ['as' => 'changelocale', 'uses' => 'LanguageControll
     Route::resource('productgallery', 'ProductGalleryController');
     Route::resource('user', 'UserController');
     /*
-    * Elfinder  for CKEditor
+    * Elfinder and Elfinder Plugin for CKEditor
     */
     Route::get('elfinder', '\Barryvdh\Elfinder\ElfinderController@showPopup');
     Route::any('elfinder.connector', '\Barryvdh\Elfinder\ElfinderController@showConnector');
