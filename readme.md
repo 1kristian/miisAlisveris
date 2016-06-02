@@ -3,6 +3,7 @@ miisAlisveris
 
 
 Bismillahhirrahmanirrahim.
+
 miisAlisveris ist simple and basic e-commerce system with Laravel 5.2.
 
 ----------
@@ -11,14 +12,15 @@ Overview
 --------
 
 > - Full SEO Friendly
-> - Products with Multi-Categories
+> - Unlimited Products
+> - Unlimited Categories
 > - User Management
 > - Multiple Address from User
 > - Multiple Cart Support (Wishlist, Cart, ..)
 > - Laravel 5.2
 > - Bootstrap
-> - **36** Currencies with update from Yahoo or another services
-> - Multi Language Support
+> - Multiple Currencies | Standart **36** Currency with one Code for Update from Yahoo or another services
+> - Unlimited Language
 
 ----------
 
@@ -38,8 +40,8 @@ Screenvideo
 > - php artisan currency:update
 
 **Development Notes:**
-One file mySQL Editor(phpMyAdmin alternative)
-> - http://yourUrl.com/adminer.php 
+for mySQL editing
+> - http://homestead.app/adminer.php // or yourdomain.com/adminer.php
 
  **Cron Jobs:**
 for  Currencies update from Finance Yahoo;
