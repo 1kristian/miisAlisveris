@@ -17,7 +17,7 @@ use App\ProductGallery;
 class ProductController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the Products.
      *
      * @return \Illuminate\Http\Response
      */
@@ -29,7 +29,7 @@ class ProductController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new Product.
      *
      * @return \Illuminate\Http\Response
      */
@@ -41,9 +41,10 @@ class ProductController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created Product in storage.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @return \Laracasts\Flash\Flash
      * @return \Illuminate\Http\Response
      */
     public function store(ProductStoreRequest $request)
@@ -72,7 +73,7 @@ class ProductController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified Product.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -83,7 +84,7 @@ class ProductController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified Product.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -102,10 +103,11 @@ class ProductController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the Product in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
+     * @return \Laracasts\Flash\Flash
      * @return \Illuminate\Http\Response
      */
     public function update(ProductUpdateRequest $request, $id)
@@ -134,9 +136,10 @@ class ProductController extends Controller
      }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified Product from storage.
      *
      * @param  int  $id
+     * @return \Laracasts\Flash\Flash
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

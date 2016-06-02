@@ -17,7 +17,7 @@ class CategoryController extends Controller
 {
 
     /**
-     * Display a listing of the resource.
+     * Display a listing of the Categories.
      *
      * @return \Illuminate\Http\Response
      */
@@ -31,7 +31,7 @@ class CategoryController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new Category.
      *
      * @return \Illuminate\Http\Response
      */
@@ -44,9 +44,10 @@ class CategoryController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created Category in storage.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @return \Laracasts\Flash\Flash
      * @return \Illuminate\Http\Response
      */
     public function store(CategoryStoreRequest $request)
@@ -73,7 +74,7 @@ class CategoryController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified Category.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -84,7 +85,7 @@ class CategoryController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the Category colums.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -101,10 +102,11 @@ class CategoryController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the Category in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
+     * @return \Laracasts\Flash\Flash
      * @return \Illuminate\Http\Response
      */
     public function update(CategoryUpdateRequest $request, $id)
@@ -130,9 +132,10 @@ class CategoryController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified Category from storage.
      *
      * @param  int  $id
+     * @return \Laracasts\Flash\Flash
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

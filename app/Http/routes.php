@@ -66,6 +66,9 @@ Route::post('changelocale', ['as' => 'changelocale', 'uses' => 'LanguageControll
     Route::resource('product', 'ProductController');
     Route::resource('productgallery', 'ProductGalleryController');
     Route::resource('user', 'UserController');
+    Route::get('password/{id}/edit', ['as' => 'admin.password.edit', 'uses' =>  'PasswordController@edit']);
+    Route::patch('password/{id}/updatePassword', ['as' => 'admin.password.updatePassword', 'uses' =>  'PasswordController@updatePassword']);
+
     /*
     * Elfinder and Elfinder Plugin for CKEditor
     */

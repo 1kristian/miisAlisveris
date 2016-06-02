@@ -11,6 +11,11 @@ use Auth;
 
 class ProfileController extends Controller {
 
+    /**
+     * 
+     * Check Auth::check() and Standart Share's
+     *
+     */
     public function __construct() {
         if (!Auth::check()) {
             return redirect('login')->send();
@@ -20,7 +25,13 @@ class ProfileController extends Controller {
         view()->share('categories', $categories);
         view()->share('currencies', $currencies);
     }
-
+    
+    /**
+     * Display a Home with User Addresses
+     *
+     * @param  string  $slug
+     * @return \Illuminate\Http\Response
+     */
     public function index() {
 
         $user_addresses = UserAddress::where('user_id', Auth::id())->get();
@@ -31,7 +42,12 @@ class ProfileController extends Controller {
             'user_addresses' => $user_addresses
         ]);
     }
-
+    
+    /**
+     * Show the form for creating a new User Address.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function newAddress() {
         return view('auth.profile.newaddress', [
             'page_title' => 'Create New Address',
@@ -39,7 +55,13 @@ class ProfileController extends Controller {
     }
 
 
-
+    /**
+     * Store a newly created User Address in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Laracasts\Flash\Flash
+     * @return \Illuminate\Http\Response
+     */
     public function createAddress(CreateAddressRequest $request) {
 
         $useraddress = new UserAddress;
@@ -61,7 +83,13 @@ class ProfileController extends Controller {
             return redirect('profile');
         }
     }
-
+    
+    /**
+     * Display the specified User Address.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function showAddress($id) {
         $useraddress = UserAddress::where('user_address_id', $id)->first();
         if (!$useraddress) {
@@ -74,6 +102,13 @@ class ProfileController extends Controller {
         ]);
     }
 
+    /**
+     * Update the User Address in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Laracasts\Flash\Flash
+     * @return \Illuminate\Http\Response
+     */
     public function updateAddress(UpdateAddressRequest $request) {
         $useraddress = UserAddress::where('user_address_id', $request->user_address_id)
                 ->where('user_id', Auth::id())
@@ -96,7 +131,13 @@ class ProfileController extends Controller {
             return redirect()->back();
         }
     }
-
+    /**
+     * Remove the specified User Address from storage.
+     *
+     * @param  int  $id
+     * @return \Laracasts\Flash\Flash
+     * @return \Illuminate\Http\Response
+     */
     public function deleteAddress($id) {
 
         $deletedAdress = UserAddress::where('user_address_id', $id)

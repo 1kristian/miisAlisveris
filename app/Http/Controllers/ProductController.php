@@ -7,6 +7,11 @@ use App\Http\Requests;
 
 class ProductController extends Controller {
 
+    /**
+     * 
+     * Standart Share's
+     *
+     */
     public function __construct() {
 
       $categories = \App\Category::all()->toHierarchy();
@@ -14,7 +19,13 @@ class ProductController extends Controller {
       view()->share('categories', $categories);
       view()->share('currencies', $currencies);
     }
-
+    
+    /**
+     * Display the Product.
+     *
+     * @param  string  $slug
+     * @return \Illuminate\Http\Response
+     */
     public function index($slug) {
 
         $products = \App\Product::all();

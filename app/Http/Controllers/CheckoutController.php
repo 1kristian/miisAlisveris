@@ -12,6 +12,11 @@ use App\UserAddress;
 
 class CheckoutController extends Controller {
 
+    /**
+     * 
+     * Check Basket count and Standart Share's
+     *
+     */
     public function __construct() {
         if (CartProvider::instance()->count() == 0) {
             return redirect('/')->send();
@@ -21,7 +26,12 @@ class CheckoutController extends Controller {
         view()->share('categories', $categories);
         view()->share('currencies', $currencies);
     }
-
+    /**
+     * Display a listing of the Basket with User Addressws.
+     *
+     * @param  id  Auth::id()
+     * @return \Illuminate\Http\Response
+     */
     public function index() {
 
         $user_addresses = UserAddress::where('user_id', Auth::id())->get();
@@ -32,7 +42,13 @@ class CheckoutController extends Controller {
             'user_addresses' => $user_addresses
         ]);
     }
-
+    
+    /**
+     * Check a Form in Checkout Index.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function checkForm(CheckoutRequest $request) {
 
         $order = new \App\Order;

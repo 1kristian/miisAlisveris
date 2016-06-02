@@ -9,6 +9,11 @@ use Auth;
 
 class HomeController extends Controller {
  
+    /**
+     * Display Dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index() {
         return view('admin/home.index');
     }

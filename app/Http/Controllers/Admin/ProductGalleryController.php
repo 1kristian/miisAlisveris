@@ -15,7 +15,7 @@ use App\ProductGallery;
 class ProductGalleryController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the Product Gallery.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -38,9 +38,10 @@ class ProductGalleryController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created Product Gallery in storage.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @return \Laracasts\Flash\Flash
      * @return \Illuminate\Http\Response
      */
     public function store(ProductGalleryStoreRequest $request)
@@ -63,7 +64,7 @@ class ProductGalleryController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified Product Gallery.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -88,10 +89,11 @@ class ProductGalleryController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the Product Gallery in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
+     * @return \Laracasts\Flash\Flash
      * @return \Illuminate\Http\Response
      */
     public function update(ProductGalleryUpdateRequest $request, $id)
@@ -112,9 +114,10 @@ class ProductGalleryController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified Product Gallery from storage.
      *
      * @param  int  $id
+     * @return \Laracasts\Flash\Flash
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

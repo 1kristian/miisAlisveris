@@ -7,7 +7,14 @@ use App\Http\Requests;
 use Currency;
 
 class CurrencyController extends Controller {
-
+    
+    /**
+     * Update the Currency.
+     *
+     * @param  int  $currencyID
+     * @return \Laracasts\Flash\Flash
+     * @return \Illuminate\Http\Response
+     */
     public function update($currencyID) {
 
         $currency_info = \App\Currency::find($currencyID);

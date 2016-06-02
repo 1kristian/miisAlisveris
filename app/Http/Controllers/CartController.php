@@ -8,6 +8,12 @@ use CartProvider;
 
 class CartController extends Controller {
 
+    
+    /**
+     * 
+     * Check Basket count and Standart Share's
+     *
+     */
     public function __construct() {
         if (CartProvider::instance()->count() == 0) {
             return redirect('/')->send();
@@ -18,7 +24,11 @@ class CartController extends Controller {
         view()->share('currencies', $currencies);
 
     }
-
+    /**
+     * Display a listing of the Basket Product.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index() {
         if (CartProvider::instance()->count() === 0) {
             return redirect('/');
@@ -27,7 +37,14 @@ class CartController extends Controller {
             'page_title' => 'Cart View',
         ]);
     }
-
+    
+    /**
+     * Store a newly Product in Basket.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Laracasts\Flash\Flash
+     * @return \Illuminate\Http\Response
+     */
     public function add(Request $request) {
         $productID = $request->input('productID');
         $qty = $request->input('qty');
@@ -50,6 +67,13 @@ class CartController extends Controller {
         }
     }
 
+    /**
+     * Update the Product in Basket.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Laracasts\Flash\Flash
+     * @return \Illuminate\Http\Response
+     */
     public function update(Request $request) {
         $rowID = $request->input('rowID');
         $qty = $request->input('qty');
@@ -61,7 +85,14 @@ class CartController extends Controller {
             return redirect()->back();
         }
     }
-
+    
+    /**
+     * Remove the specified Product from Basket.
+     *
+     * @param  int  $id
+     * @return \Laracasts\Flash\Flash
+     * @return \Illuminate\Http\Response
+     */
     public function remove($rowID) {
         if (CartProvider::instance()->remove($rowID)) {
             \Flash::success('Product deleted.');

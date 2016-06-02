@@ -41,7 +41,7 @@
                       <td>{{ $user->updated_at }}</td>
                       <td>
                         <a class="btn btn-primary" href="{{ route('admin.user.edit', $user->id) }}" role="button">Edit</a>
-                        <a class="btn btn-primary" href="{{ route('admin.user.show', $user->id) }}" role="button">Password</a>
+                        <a class="btn btn-primary" href="{{ route('admin.password.edit', $user->id) }}" role="button">Password</a>
                         <a class="btn btn-primary" href="{{ route('admin.user.show', $user->id) }}" role="button">Permission</a>
                         <a class="btn btn-primary" href="{{ route('admin.user.show', $user->id) }}" role="button">Roles</a>
                         <a class="btn btn-warning" href="{{ route('admin.user.destroy', $user->id) }}" data-method="delete" data-token="{{ csrf_token() }}" data-confirm="Are you sure?">Delete</a>

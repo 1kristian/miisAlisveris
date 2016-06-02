@@ -8,14 +8,25 @@ use CartProvider;
 
 class HomeController extends Controller {
 
+    /**
+     * 
+     * Standart Share's
+     *
+     */
     public function __construct() {
-        //$this->middleware('auth');
         $categories = \App\Category::all()->toHierarchy();
         $currencies = \App\Currency::all();
         view()->share('categories', $categories);
         view()->share('currencies', $currencies);
     }
-
+    
+    /**
+     * Display a Home with Products
+     *
+     * @param  string  $slug
+     * @return \Illuminate\Http\Response
+     */
+    
     public function index() {
         $products = \App\Product::all();
 
